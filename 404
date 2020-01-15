@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="src/img/favicon.png" type="image/gif">
+	<link rel="stylesheet" href="src/css/error">
+	<title>S.I.W.G.O.</title>
+</head>
+<body>
+	<header>
+		<img src="src/img/banner.png">
+	</header>
+	<h1 id="messageLabel"></h1>
+	<script src="src/js/404.js"></script>
+	<script type="text/javascript">
+		document.oncontextmenu = function(){
+			return false;
+		}
+	</script>
+</body>
+</html>

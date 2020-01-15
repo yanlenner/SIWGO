@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#search").focus(),$("#search").on("keyup",function(){var a=$("#search").val();$.ajax({type:"POST",url:"../../../src/php/fin_usuarioU.php",data:{search:a}}).done(function(a){"false"===a?$("#usuario").val(""):($("#usuario").val(a),$("#usuario").focus())})})});

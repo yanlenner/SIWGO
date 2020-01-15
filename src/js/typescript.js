@@ -1,0 +1,1 @@
+var timer,message="Sistema de Información Web para la Gestión de Pacientes del Servicio Odontológico \"Kléber Ramírez\"",msgCount=0,blinkCount=0,messageLabel=document.getElementById("messageLabel");function textFunc(){messageLabel.innerHTML=message.substring(0,msgCount),msgCount==message.length?clearInterval(timer):msgCount++}timer=setInterval("textFunc()",100);

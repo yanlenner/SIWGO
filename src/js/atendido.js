@@ -1,0 +1,1 @@
+function atend(){var e=$("#cedula").val();$.ajax({type:"POST",url:"../../../src/php/fin_pacatend.php",data:{search:e}}).done(function(e){"false"===e?(alert("Para generar el reporte, primero se le debe registrar una consulta al paciente"),$(":submit").attr("hidden","true")):$(":submit").removeAttr("hidden")})}

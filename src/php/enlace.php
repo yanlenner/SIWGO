@@ -1,0 +1,1 @@
+<?php $dbhost='localhost';$dbuser='odontologia';$dbpass='proyectoii';$dbname='odontologia'; ?>
