@@ -16,6 +16,14 @@ function desactivar() {
 function buscar() {
   var a = $('#cedula').val();
   '' === a ? (alert('El campo Número de cédula esta vacío'), desactivar())  : $.ajax({
+    type: 'POST',
+    url: '../../../src/php/fin_pactrabajador.php',
+    data: {
+      search: a
+    }
+  }).done(function (b) {
+    'true' === b ? (alert('Has escrito el Número de cédula de un trabajador del servicio odontólogico, \npor tanto la operación a realizar no puede ser procesada'),$(':reset').click())  : 
+  ($.ajax({
         type: 'POST',
         url: '../../../src/php/fin_pacnombre.php',
         data: {
@@ -109,8 +117,9 @@ function buscar() {
           $(this).attr('disabled', 'disabled')
         }), $(':checkbox[value=Saludable]').removeAttr('disabled'))
       })
+      )
     
-}
+})}
 $('#cedula').focus(),
 $(function () {
   $(':radio[value=M]').on('click', function () {
