@@ -12,7 +12,8 @@
 
 #### Instalación de la Base de Datos en el Sistema Gestor de Base de Datos MariaDB:
 
-* Debes revisar el archivo db.sql ubicado en la ruta src/maria, el cual contiene la estructura de la base de datos. Puedes crear el usuario que gestionará dicha base de datos, por lo que se sugiere establecer las credenciales de acceso desde la linea 27 hasta la linea 31.
+* Debes revisar el archivo db.sql ubicado en la ruta src/maria, el cual contiene la estructura de la base de datos. 
+* Puedes crear el usuario que gestionará dicha base de datos, por lo que se sugiere establecer las credenciales de acceso desde la linea 27 hasta la linea 31 del mismo archivo.
 
 ```sql
 CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'contraseña';
