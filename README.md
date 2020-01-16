@@ -10,9 +10,9 @@
 * Debes configurar el servidor web para que utilice direcciones url amigables.
 
 
-#### Instalación en el Sistema Gestor de Base de Datos MariaDB:
+#### Instalación de la Base de Datos en el Sistema Gestor de Base de Datos MariaDB:
 
-* Debes revisar el archivo ubicado en la ruta src/maria/db.sql el cual contiene la estructura de la base de datos. Puedes crear el usuario que gestionará dicha base de datos, por lo que se recomienda establecer las credenciales de acceso desde la linea 27 hasta la linea 31.
+* Debes revisar el archivo db.sql ubicado en la ruta src/maria, el cual contiene la estructura de la base de datos. Puedes crear el usuario que gestionará dicha base de datos, por lo que se sugiere establecer las credenciales de acceso desde la linea 27 hasta la linea 31.
 
 ```sql
 CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'contraseña';
@@ -34,4 +34,13 @@ http://lenner.byethost15.com
 
 ---
 
-Sistema de Información Web bajo la Licencia MPL-2.0 *(ver [LICENCIA](https://github.com/stowball/jQuery-rwdImageMaps/blob/master/LICENSE) para más detalles)*  
+Licencia: [![CC BY-NC-SA 3.0 VE][cc-by-shield]][cc-by]
+
+Este trabajo se encuentra bajo la Licencia [Creative Commons Attribution 4.0 International
+License][cc-by].
+
+[![CC BY-NC-SA 3.0 VE][cc-by-image]][cc-by]
+
+[cc-by]: https://creativecommons.org/licenses/by-nc-sa/3.0/ve/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
