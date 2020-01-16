@@ -3,6 +3,8 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "-04:00";
 
+SET foreign_key_checks = 0;
+
 CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 
 USE `test`;
@@ -19,21 +21,10 @@ CREATE TABLE `regularidad` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
-COMMIT;
-
 
 CREATE DATABASE IF NOT EXISTS `odontologia` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 
-CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'contraseña';
-GRANT USAGE ON *.* TO 'usuario'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
-
-GRANT ALL PRIVILEGES ON `odontologia`.* TO 'usuario'@'localhost';
-GRANT ALL PRIVILEGES ON `test`.* TO 'usuario'@'localhost';
-
-
 USE `odontologia`;
-
-SET foreign_key_checks = 0;
 
 DROP TABLE IF EXISTS `persona`;
 
@@ -152,4 +143,15 @@ CREATE TABLE `tratamiento` (
   CONSTRAINT `odontologo_fk2` FOREIGN KEY (`cedula`) REFERENCES `trabajador` (`cedula`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+
+CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'contraseña';
+GRANT USAGE ON *.* TO 'usuario'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+
+GRANT ALL PRIVILEGES ON `odontologia`.* TO 'usuario'@'localhost';
+GRANT ALL PRIVILEGES ON `test`.* TO 'usuario'@'localhost';
+
+
+
 SET foreign_key_checks = 1;
+
+COMMIT;

@@ -7,10 +7,10 @@
 </head>
 <body>
 	<?php 
-	error_reporting(0);
 	$con = mysqli_connect("odontologia.uptm", "$_POST[username]", "$_POST[password]", "test") or die("<h2 style='text-align: center; margin-top: 12%;'> Error de conexión: Parece que las credenciales de acceso a las bases de datos son nulas o inválidas </h2><h4><a href='exportar' style='color:#66328f;text-decoration: none;'>Volver</a></h4>");
-	$archivo=$_FILES['csv']['name'];
-	$filePath = "file:///home/odontologia/$archivo";
+    $uploaddir = './uploads/';
+    $uploadfile = $uploaddir . basename($_FILES['csv']['name']);
+    move_uploaded_file($_FILES['csv']['tmp_name'], $uploadfile);
 	$tableName = "regularidad";
 	$fieldDelimiter = ";";
 	$lineDelimiter = "\n";
@@ -18,7 +18,7 @@
 	if($query){
 // If your csv file has not a header row, remove the line "IGNORE 1 LINES".
 		mysqli_query($con, '			
-			LOAD DATA LOCAL INFILE "'.$filePath.'"	
+			LOAD DATA LOCAL INFILE "'.$uploadfile.'"	
 			INTO TABLE '.$tableName.'				
 			CHARSET latin1
 			FIELDS TERMINATED by \'' . $fieldDelimiter . '\'

@@ -35,7 +35,7 @@ if(isset($_SESSION['usuario']) && $_SESSION['nivel'] =='o'){
   </head>
   <body>
     <?php
-    error_reporting(0);
+    
  function fechaCastellano ($fecha) {
         $fecha = substr($fecha, 0, 10);
         $numeroDia = date('d', strtotime($fecha));

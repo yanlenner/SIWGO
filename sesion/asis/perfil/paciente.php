@@ -37,7 +37,7 @@ $_SESSION["ultimoAcceso"] = $ahora;?>
     </head>
     <body>
         <?php
-        error_reporting(0);
+        
         if(empty($_POST['ci']))
         die("<h2 style='text-align: center; margin-top: 12%;'> No podemos mostrar los datos del estudiante sin la supervisión del Asistente</h2><h4 class='center'><a href='./' style='color:#66328f;text-decoration: none;'>Volver</a></h4>");
         $ci=$_POST['ci'];

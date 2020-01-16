@@ -83,7 +83,7 @@ $pie = utf8_decode('Servicio Odontólogico "Kléber Ramírez" ');
 $this->Cell(0,10,$pie.$this->PageNo().'/{nb}',0,0,'C');
 }
 }
-error_reporting(0);
+
 $pdf = new PDF('P', 'mm', 'A4');
 $pdf->AliasNbPages();
 $pdf->SetMargins(20, 25 , 20);

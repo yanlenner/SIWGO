@@ -8,7 +8,7 @@
     </head>
     <body>
         <?php
-        error_reporting(0);
+        
         $lunes = 1; $martes = 2; $miercoles = 3; $jueves = 4; $viernes = 5; # De Lunes a Viernes
         $desde = 7; # Desde las siete de la mañana
         $hasta = 18; # Hasta la seis de la tarde

@@ -33,7 +33,7 @@ $_SESSION["ultimoAcceso"] = $ahora;?>
 	</head>
 	<body>
 		<?php
-		error_reporting(0);
+		
 		include '../../../src/php/enlace.php';
 		$enlace = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 		$enlace->set_charset('utf8');

@@ -23,7 +23,7 @@ mysqli_close($enlace);
 	}
 	else
 		$_SESSION["ultimoAcceso"] = $ahora;
-	error_reporting(0);
+	
 	if(empty($_POST['tipo_reporte']))
 	die("<h2 style='text-align: center; margin-top: 12%;'> Parece que quieres consultar una estadística, de preferencia utiliza los campos del formulario</h2><h4 style='text-align:center;'><a href='./' style='color:#66328f;text-decoration: none;'>Volver</a></h4>");
 	require('../../../src/php/conexion.php');

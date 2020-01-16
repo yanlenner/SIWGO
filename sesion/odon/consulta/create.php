@@ -35,7 +35,7 @@ $_SESSION["ultimoAcceso"] = $ahora;?>
   </head>
   <body>
     <?php
-    error_reporting(0);
+    
     function generateRandomString($length = 10) {
     return substr(str_shuffle("0123456789ABCDEF"), 0, $length);
     }

@@ -64,7 +64,7 @@ $_SESSION["ultimoAcceso"] = $ahora;?>
 		<br><br>
 		<div class="row">
 			<?php
-			error_reporting(0);
+			
 			function spar(int $b){
 				if($b % 2 == 0)
 					return true;

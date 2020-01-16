@@ -75,7 +75,7 @@ $res = $mysqli->query($query);
 $row = $res->fetch_array(MYSQLI_ASSOC);
 $fechaconsulta = date_create_from_format('Y-m-d', $row['fecha']);
 $fechaconsulta = date_format($fechaconsulta, 'd-m-Y');
-error_reporting(0);
+
 date_default_timezone_set('America/Caracas');
 $pdf = new PDF('L', 'mm', 'A4');
 $pdf->SetMargins(20, 25 , 20);

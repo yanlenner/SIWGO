@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    error_reporting(0);
+    
     if(empty($_POST['usr']))
         header('Location: http://odontologia.uptm/SIWGO');
     include '../src/php/enlace.php';

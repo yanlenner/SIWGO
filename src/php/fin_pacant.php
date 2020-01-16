@@ -2,7 +2,7 @@
 
 require_once 'conexion.php';
 
-error_reporting(0);
+
 
 
 function search()

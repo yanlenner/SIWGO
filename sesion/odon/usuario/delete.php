@@ -34,7 +34,7 @@ if(isset($_SESSION['usuario']) && $_SESSION['nivel'] =='o'){
 	</head>
 	<body>
 		<?php
-		error_reporting(0);
+		
 		include '../../../src/php/enlace.php';
 		// parámetros de conexión
 		$enlace = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);

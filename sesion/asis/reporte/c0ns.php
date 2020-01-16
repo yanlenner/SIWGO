@@ -29,7 +29,7 @@ $_SESSION["ultimoAcceso"] = $ahora;
 <?php
 require('../../../src/fpdf/fpdf.php');
 require('../../../src/php/conexion.php');
-error_reporting(0);
+
 $pdf = new FPDF('P', 'mm', 'A4');
 $pdf->SetMargins(20, 25 , 20);
 $pdf->SetAutoPageBreak(true,25);

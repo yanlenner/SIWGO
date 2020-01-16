@@ -33,7 +33,7 @@ $_SESSION["ultimoAcceso"] = $ahora;?>
         <link rel="stylesheet" href="../../../src/css/int">
     </head>
     <body><?php
-        error_reporting(0);
+        
         if(empty($_POST['ci']))
         die("<h2 style='text-align: center; margin-top: 12%;'> No podemos vaciar los datos del estudiante sin el permiso del Odontólogo</h2><h4><a href='./' style='color:#66328f;text-decoration: none;'>Volver</a></h4>");
         include '../../../src/php/enlace.php';
