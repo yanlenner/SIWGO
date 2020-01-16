@@ -4,26 +4,34 @@
 
 ---
 
-#### Conexión con la Base de Datos:
+#### Configuración en Servidor Apache:
 
-* Para comenzar, debes revisar el archivo ubicado en la ruta src/maria/db.sql el cual contiene la estructura de la base de datos. Puedes crear el usuario que gestionará dicha base de datos, por lo que se recomienda establecer las credenciales de acceso desde la linea 27 hasta la linea 31.
+* Debes usar o modificar el virtual host odontologia.uptm que apunta hacia la dirección 127.0.0.1.
+* Debes configurar el servidor web para que utilice direcciones url amigables.
+
+
+#### Instalación de la Base de Datos:
+
+* Debes revisar el archivo ubicado en la ruta src/maria/db.sql el cual contiene la estructura de la base de datos. Puedes crear el usuario que gestionará dicha base de datos, por lo que se recomienda establecer las credenciales de acceso desde la linea 27 hasta la linea 31.
 
 ```sql
 CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'contraseña';
-GRANT USAGE ON *.* TO 'usuario'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
 GRANT USAGE ON *.* TO 'usuario'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
 
 GRANT ALL PRIVILEGES ON `odontologia`.* TO 'usuario'@'localhost';
 GRANT ALL PRIVILEGES ON `test`.* TO 'usuario'@'localhost';
 ```
 
-You may also want to wrap it inside a `$(document).ready()` function, like so:
+
+#### Conexión hacia la Base de Datos:
+
+* Debes modificar los parámetros de acceso que se encuentran en los archivos conexion.php, enlace.php, fin_esregular.php, put_name.php, put_apel.php, put_carr.php y put_carn.php de la ruta src/php.
 
 
-#### Demo:
+#### Demostración:
 
 http://lenner.byethost15.com
 
 ---
 
-Sistema de Información Web bajo la Licencia MPL-2.0 *(see [LICENSE](https://github.com/stowball/jQuery-rwdImageMaps/blob/master/LICENSE) for details)*  
+Sistema de Información Web bajo la Licencia MPL-2.0 *(ver [LICENCIA](https://github.com/stowball/jQuery-rwdImageMaps/blob/master/LICENSE) para más detalles)*  
