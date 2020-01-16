@@ -137,7 +137,6 @@ $_SESSION["ultimoAcceso"] = $ahora;?>
     <script src="../../../src/js/materialize.js"></script>
     <script src="../../../src/js/main.js"></script>
     <script src="../../../src/js/pac3.js"></script>
-    <script src="../../../src/js/regularidad.js"></script>
   </body>
 </html>
 <?php

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../../../src/css/font-awesome">
-		<link rel="stylesheet" type="text/css" href="../../../src/css/int">
+	<link rel="stylesheet" href="../../../src/css/font-awesome">
+	<link rel="stylesheet" href="../../../src/css/bootstrap">
+    <link rel="stylesheet" href="../../../src/css/int">
 </head>
 <body>
 	<?php 
-	if(empty($_POST['username']) || empty($_POST['password']))
-	die("Error de conexión: Parece que las credenciales de acceso a las bases de datos son nulas o inválidas<br><br><h4 style='text-align:center;'><a href='restaurar' style='color:#66328f;text-decoration: none;'>Volver</a></h4>");
-	$con = mysqli_connect("odontologia.uptm", "$_POST[username]", "$_POST[password]", "test") or die(mysql_error());
+	error_reporting(0);
+	$con = mysqli_connect("odontologia.uptm", "$_POST[username]", "$_POST[password]", "test") or die("<h2 style='text-align: center; margin-top: 12%;'> Error de conexión: Parece que las credenciales de acceso a las bases de datos son nulas o inválidas </h2><h4><a href='exportar' style='color:#66328f;text-decoration: none;'>Volver</a></h4>");
 	$archivo=$_FILES['csv']['name'];
 	$filePath = "file:///home/odontologia/$archivo";
 	$tableName = "regularidad";

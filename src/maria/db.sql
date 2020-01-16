@@ -5,6 +5,12 @@ SET time_zone = "-04:00";
 
 CREATE DATABASE IF NOT EXISTS `odontologia` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 
+CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'contraseña';
+GRANT USAGE ON *.* TO 'usuario'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+
+GRANT ALL PRIVILEGES ON `odontologia`.* TO 'usuario'@'localhost';
+GRANT ALL PRIVILEGES ON `test`.* TO 'usuario'@'localhost';
+
 USE `odontologia`;
 
 SET foreign_key_checks = 0;

@@ -72,7 +72,7 @@ $_SESSION["ultimoAcceso"] = $ahora;?>
           </a>
           <div class="row">
             <div class="input-field col s6">
-              <input id="cedula" type="text" class="validate identificacion blanco" name="ci" autocomplete="off" required="" onchange="regularidad();">
+              <input id="cedula" type="text" class="validate identificacion blanco" name="ci" autocomplete="off" required="">
               <label for="cedula">Número de cédula</label>
             </div>
             <div class="input-field col s6">

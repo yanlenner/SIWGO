@@ -12,7 +12,8 @@ if(isset($_SESSION['usuario']) && $_SESSION['nivel'] =='o'){
         $enlace = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
         $enlace->set_charset('utf8');
         if (!$enlace) die("Conexión fallida: " . mysqli_connect_error());
-        $result = mysqli_query($enlace, "SELECT max(id_sesion) as id FROM sesion WHERE usuario = '$_SESSION[usuario]'");
+        $result = mysqli_query($enlace, "SELECT max(id_sesion) as id 
+         sesion WHERE usuario = '$_SESSION[usuario]'");
         $row = mysqli_fetch_assoc($result);
         $query = mysqli_query($enlace, "UPDATE sesion set fin ='$ahora', minutos=TIMESTAMPDIFF(MINUTE,inicio,fin) where id_sesion = '$row[id]' and usuario like '$_SESSION[usuario]'");
         session_unset($_SESSION['usuario']);
@@ -24,12 +25,25 @@ if(isset($_SESSION['usuario']) && $_SESSION['nivel'] =='o'){
         mysqli_close($enlace);
     }
     else
-        $_SESSION["ultimoAcceso"] = $ahora;
+        $_SESSION["ultimoAcceso"] = $ahora;?>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../src/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../src/css/bootstrap">
+    <link rel="stylesheet" href="../../../src/css/int">
+  </head>
+  <body>
+    <?php
     error_reporting(0);
     //include our function
 function restore($server, $username, $password, $dbname, $location){
 //connection
 $conn = new mysqli($server, $username, $password, $dbname);
+if(mysqli_connect_error($conn))
+die("<h2 style='text-align: center; margin-top: 12%;'> Error de conexión: Parece que las credenciales de acceso a las bases de datos son nulas o inválidas </h2><h4><a href='exportar' style='color:#66328f;text-decoration: none;'>Volver</a></h4>");
+else
 $conn->set_charset('utf8'); 
 //variable use to store queries from our sql file
 $sql = '';

@@ -69,7 +69,7 @@ $_SESSION["ultimoAcceso"] = $ahora;?>
           </a>
           <div class="row">
             <div class="input-field col s6">
-              <input id="cedula" type="text" class="validate identificacion blanco" name="ci" autocomplete="off" required="" onchange="regularidad();">
+              <input id="cedula" type="text" class="validate identificacion blanco" name="ci" autocomplete="off" required="">
               <label for="cedula">Número de cédula</label>
             </div>
             <div class="input-field col s6">
@@ -406,7 +406,6 @@ $_SESSION["ultimoAcceso"] = $ahora;?>
     <script src="../../../src/js/jquery-inputmask.js"></script>
     <script src="../../../src/js/materialize.js"></script>
     <script src="../../../src/js/main.js"></script>
-    <script src="../../../src/js/regularidad.js"></script>
     <script type="text/javascript">
     $(function() {
     $('.demo-masked-input').find('.email').inputmask({

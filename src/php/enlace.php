@@ -1,1 +1,1 @@
-<?php $dbhost='localhost';$dbuser='odontologia';$dbpass='proyectoii';$dbname='odontologia'; ?>
+<?php $dbhost='localhost';$dbuser='usuario';$dbpass='contraseña';$dbname='odontologia'; ?>

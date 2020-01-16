@@ -24,7 +24,18 @@ if(isset($_SESSION['usuario']) && $_SESSION['nivel'] =='o'){
         mysqli_close($enlace);
     }
     else
-        $_SESSION["ultimoAcceso"] = $ahora;
+        $_SESSION["ultimoAcceso"] = $ahora;?>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../src/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../src/css/bootstrap">
+    <link rel="stylesheet" href="../../../src/css/int">
+  </head>
+  <body>
+    <?php
+    error_reporting(0);
  function fechaCastellano ($fecha) {
         $fecha = substr($fecha, 0, 10);
         $numeroDia = date('d', strtotime($fecha));
@@ -66,8 +77,11 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $database_name = "odontologia";
 
-// Get connection object and set the charset
+// Get connection object and set the charseto
 $conn = mysqli_connect($host, $username, $password, $database_name);
+if(mysqli_connect_error($conn))
+die("<h2 style='text-align: center; margin-top: 12%;'> Error de conexión: Parece que las credenciales de acceso a las bases de datos son nulas o inválidas </h2><h4><a href='exportar' style='color:#66328f;text-decoration: none;'>Volver</a></h4>");
+else
 $conn->set_charset("utf8");
 
 
@@ -85,22 +99,22 @@ foreach ($tables as $table) {
     $query = "SHOW CREATE TABLE $table";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_row($result);
-
+    
     $sqlScript .= "\n\n" . $row[1] . ";\n\n";
-
-
+    
+    
     $query = "SELECT * FROM $table";
     $result = mysqli_query($conn, $query);
-
+    
     $columnCount = mysqli_num_fields($result);
-
+    
     // Prepare SQLscript for dumping data for each table
     for ($i = 0; $i < $columnCount; $i ++) {
         while ($row = mysqli_fetch_row($result)) {
             $sqlScript .= "INSERT INTO $table VALUES(";
             for ($j = 0; $j < $columnCount; $j ++) {
                 $row[$j] = $row[$j];
-
+                
                 if (isset($row[$j])) {
                     $sqlScript .= '"' . $row[$j] . '"';
                 } else {
@@ -113,8 +127,8 @@ foreach ($tables as $table) {
             $sqlScript .= ");\n";
         }
     }
-
-    $sqlScript .= "\n";
+    
+    $sqlScript .= "\n"; 
 }
 
 if(!empty($sqlScript))
@@ -123,7 +137,7 @@ if(!empty($sqlScript))
     $backup_file_name = $database_name . '_respaldo_' . fechaCastellano(date('d-m-Y')) . '.sql';
     $fileHandler = fopen($backup_file_name, 'w+');
     $number_of_lines = fwrite($fileHandler, $sqlScript);
-    fclose($fileHandler);
+    fclose($fileHandler); 
 
     // Download the SQL backup file to the browser
     header('Content-Description: File Transfer');
@@ -137,7 +151,7 @@ if(!empty($sqlScript))
     ob_clean();
     flush();
     readfile($backup_file_name);
-    exec('rm' . $backup_file_name);
+    exec('rm' . $backup_file_name); 
 }
 mysql_close($conn);
 }
