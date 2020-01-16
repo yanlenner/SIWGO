@@ -34,13 +34,4 @@ http://lenner.byethost15.com
 
 ---
 
-Licencia: [![CC BY-NC-SA 3.0 VE][cc-by-shield]][cc-by]
-
-Este trabajo se encuentra bajo la Licencia [Creative Commons Attribution 4.0 International
-License][cc-by].
-
-[![CC BY-NC-SA 3.0 VE][cc-by-image]][cc-by]
-
-[cc-by]: https://creativecommons.org/licenses/by-nc-sa/3.0/ve/
-[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
-[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+Este trabajo se encuentra bajo la Licencia [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
