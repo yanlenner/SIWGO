@@ -3,6 +3,25 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "-04:00";
 
+CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+
+USE `test`;
+
+DROP TABLE IF EXISTS `regularidad`;
+
+CREATE TABLE `regularidad` (
+  `cedula` varchar(10) COLLATE utf8_spanish_ci NOT NULL,  
+  `nombres` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `apellidos` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `carrera` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `carnet` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
+  UNIQUE KEY `cedula` (`cedula`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+COMMIT;
+
+
 CREATE DATABASE IF NOT EXISTS `odontologia` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 
 CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'contraseña';
@@ -10,6 +29,7 @@ GRANT USAGE ON *.* TO 'usuario'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HO
 
 GRANT ALL PRIVILEGES ON `odontologia`.* TO 'usuario'@'localhost';
 GRANT ALL PRIVILEGES ON `test`.* TO 'usuario'@'localhost';
+
 
 USE `odontologia`;
 
@@ -133,21 +153,3 @@ CREATE TABLE `tratamiento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 SET foreign_key_checks = 1;
-
-CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-
-USE `test`;
-
-DROP TABLE IF EXISTS `regularidad`;
-
-CREATE TABLE `regularidad` (
-  `cedula` varchar(10) COLLATE utf8_spanish_ci NOT NULL,  
-  `nombres` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `apellidos` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `carrera` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `carnet` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
-  UNIQUE KEY `cedula` (`cedula`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
-
-COMMIT;
