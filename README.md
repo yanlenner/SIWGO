@@ -4,13 +4,13 @@
 
 ---
 
-#### Configuración en Servidor Apache:
+#### Configuración del Servidor Apache:
 
 * Debes usar o modificar el virtual host odontologia.uptm que apunta hacia la dirección 127.0.0.1.
 * Debes configurar el servidor web para que utilice direcciones url amigables.
 
 
-#### Instalación de la Base de Datos:
+#### Instalación en el Sistema Gestor de Base de Datos MariaDB:
 
 * Debes revisar el archivo ubicado en la ruta src/maria/db.sql el cual contiene la estructura de la base de datos. Puedes crear el usuario que gestionará dicha base de datos, por lo que se recomienda establecer las credenciales de acceso desde la linea 27 hasta la linea 31.
 
