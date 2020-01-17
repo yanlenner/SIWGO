@@ -123,11 +123,11 @@ function buscar() {
 $('#cedula').focus(),
 $(function () {
   $(':radio[value=M]').on('click', function () {
-    $('h5.f1').attr('enabled', 'M' == $(this).val()).html('<img class="tooltipped menui" src="../../../src/img/menu.png" data-position="bottom" data-tooltip="Muestra el menú lateral izquierdo"> Actualizar Identificación de la Paciente'),
+    $('h5.f1').attr('enabled', 'M' == $(this).val()).html('<img class="tooltipped menui" src="../../../src/img/menuper.png" data-position="bottom" data-tooltip="Muestra el menú lateral izquierdo"> Actualizar Identificación de la Paciente'),
     $('li.f1').html('Identificación de la Paciente')
   }),
   $(':radio[value=H]').on('click', function () {
-    $('h5.f1').html('<img class="tooltipped menui" src="../../../src/img/menu.png" data-position="bottom" data-tooltip="Muestra el menú lateral izquierdo"> Actualizar Identificación del Paciente'),
+    $('h5.f1').html('<img class="tooltipped menui" src="../../../src/img/menuper.png" data-position="bottom" data-tooltip="Muestra el menú lateral izquierdo"> Actualizar Identificación del Paciente'),
     $('li.f1').html('Identificación del Paciente')
   })
 });

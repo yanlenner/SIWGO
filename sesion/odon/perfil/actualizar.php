@@ -447,8 +447,13 @@ $('.sp').click(function() {
     $(':checkbox[value=\'ConsumodePastillasA.C.\']').attr('disabled', 'disabled')
     }
     if ($('.with-gap[value=M]').is(':checked')) {
+    if ($(':checkbox[value=Saludable]').is(':checked')) {
+
+      }
+      else{
     $(':checkbox[value=Embarazo]').removeAttr('disabled'),
     $(':checkbox[value=\'ConsumodePastillasA.C.\']').removeAttr('disabled')
+    }
     }
     });
     </script>
