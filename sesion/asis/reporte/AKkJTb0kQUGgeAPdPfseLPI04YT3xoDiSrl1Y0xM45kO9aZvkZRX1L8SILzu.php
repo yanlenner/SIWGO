@@ -85,6 +85,6 @@ else
 {
 // Usuario que no se ha logueado
 echo "<div class='alert alert-danger' role='alert' style='text-align: center; margin-top: 5%;'>No tienes permiso para:<br><br> <strong>Acceder a esta página</strong><br><br><br><div align='center'><img height='210' width='180' src='http://odontologia.uptm/SIWGO/src/img/saltos.gif'></div><strong>Por favor espere un momento mientras <br>redireccionamos el url.</strong></div>";
-header('Refresh: 6; http://odontologia.uptm/SIWGO'); //redirect
+header('Refresh: 5; http://odontologia.uptm/SIWGO'); //redirect
 }
 ?>
